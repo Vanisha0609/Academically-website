@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator with Honors and Improvement Suggestions</title>
+    <link rel="stylesheet" href="dash.css">
+</head>
+<body class="cal">
+    <h1>CGPA Calculator</h1>
+    <table id="courseTable">
+        <thead>
+            <tr>
+                <th>Course Code</th>
+                <th>Credits Earned</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" name="courseCode"></td>
+                <td><input type="number" name="creditsEarned"></td>
+                <td>
+                    <select name="grade">
+                        <option value="10">A+</option>
+                        <option value="9">A</option>
+                        <option value="8">B+</option>
+                        <option value="7">B</option>
+                        <option value="6">C+</option>
+                        <option value="5">C</option>
+                        <option value="4">D</option>
+                        <option value="0">F</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="zenny" onclick="addRow()">Add Row</button>
+    <button class=" zenny" onclick="calculateCGPA()">Calculate CGPA</button>
+    <p id="cgpaResult"></p>
+    
+    <!-- Domain Selection -->
+    <div id="domainSelection" style="display: none;">
+        <label for="domain">Select Your Domain of Interest:</label>
+        <select id="domain" onchange="displayHonorsSuggestions()">
+            <option value="">Select...</option>
+            <option value="dataScience">Data Science</option>
+            <option value="ai">Artificial Intelligence</option>
+            <option value="cybersecurity">Cybersecurity</option>
+            <option value="machineLearning">Machine Learning</option>
+            <option value="fullstack">Fullstack Development</option>
+            <option value="cloudComputing">Cloud Computing</option>
+        </select>
+    </div>
+    
+    <!-- Honors Options -->
+    <div id="honorsOptions" style="display: none;">
+        <h2>Congratulations! You're eligible for the following Honors in Computer Science:</h2>
+        <ul id="honorsList">
+            <!-- Honors suggestions will be added here based on the selected domain -->
+        </ul>
+    </div>
+    
+    <!-- Improvement Suggestions -->
+    <div id="improvementSuggestions" style="display: none;">
+        <h2>Ways to Improve Your CGPA:</h2>
+        <ul id="improvementList">
+            <!-- Improvement suggestions will be added here -->
+        </ul>
+        <h2>Future Ideas:</h2>
+        <ul id="futureIdeas">
+            <!-- Future ideas will be added here -->
+        </ul>
+    </div>
+    <button class="zenny" onclick="window.location.href='credits.html'">Credits</button>
+    <script src="scripts.js"></script>
+</body>
+</html>

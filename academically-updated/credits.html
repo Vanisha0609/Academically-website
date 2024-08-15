@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credits Calculator</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Credits Calculator</h1>
+        <form id="creditsForm">
+            <label for="category">Select Subject Category:</label>
+            <select id="category" onchange="updateCourses()">
+                <option value="" disabled selected>Select a category</option>
+                <option value="HSS">Humanity & Social Science (HSS)</option>
+                <option value="BS">Basic Science (BS)</option>
+                <option value="ES">Engineering Science (ES)</option>
+                <option value="PC">Professional Core (PC)</option>
+                <option value="PE">Professional Elective (PE)</option>
+                <option value="OE">Open Elective (OE)</option>
+                <option value="EEC">Employability Enhancement Course (EEC)</option>
+                <option value="Mandatory">Mandatory Course</option>
+            </select>
+
+            <label for="course">Select Course:</label>
+            <select id="course">
+                <option value="" disabled selected>Select a course</option>
+            </select>
+
+            <button type="button" onclick="addCourse()">Add Course</button>
+        </form>
+
+        <h2>Selected Courses:</h2>
+        <ul id="selectedCourses"></ul>
+
+        <h3>Total Credits: <span id="totalCredits">0</span></h3>
+    </div>
+    <script src="credit.js"></script>
+</body>
+</html>

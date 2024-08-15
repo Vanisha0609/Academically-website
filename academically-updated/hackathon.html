@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="details-container">
+        <h1>Hackathon</h1>
+        <p><strong>What is a Hackathon?</strong><br>A hackathon is an event where participants work intensively on programming and technology projects within a set timeframe to solve problems or create new products.</p>
+        
+        <p><strong>Why Should Students Participate?</strong><br>Participating in a hackathon helps students:</p>
+        <ul>
+            <li>Enhance their problem-solving skills.</li>
+            <li>Gain practical experience in coding and project development.</li>
+            <li>Collaborate with peers and industry professionals.</li>
+            <li>Showcase their skills to potential employers.</li>
+        </ul>
+        
+        <p><strong>How to Register:</strong></p>
+        <ul>
+            <li>Visit the event's official website.</li>
+            <li>Sign up using the registration form.</li>
+            <li>Join as an individual or with a team.</li>
+            <li>Submit any required preliminary ideas or profiles.</li>
+        </ul>
+        
+        <label for="hackathon-field">Select Field of Interest:</label>
+        <select id="hackathon-field" onchange="showIdea('hackathon')">
+            <option value="">--Choose an option--</option>
+            <option value="web-development">Web Development</option>
+            <option value="data-science">Data Science</option>
+            <option value="cybersecurity">Cybersecurity</option>
+        </select>
+        <div id="hackathon-idea" class="idea"></div>
+    </div>
+
+    <script>
+        function showIdea(eventType) {
+            const field = document.getElementById(`${eventType}-field`).value;
+            const ideaDiv = document.getElementById(`${eventType}-idea`);
+
+            let idea = '';
+
+            if (eventType === 'hackathon') {
+                if (field === 'web-development') {
+                    idea = `<strong>Sample Ideas:</strong>
+                            <ul>
+                                <li>Create a responsive website for a non-profit organization.</li>
+                                <li>Develop an online marketplace for local artisans.</li>
+                                <li>Build a portfolio website with modern design principles.</li>
+                                <li>Create a blogging platform with user authentication and content management.</li>
+                            </ul>`;
+                } else if (field === 'data-science') {
+                    idea = `<strong>Sample Ideas:</strong>
+                            <ul>
+                                <li>Analyze social media trends to predict viral content.</li>
+                                <li>Develop a recommendation engine for e-commerce websites.</li>
+                                <li>Build a data visualization tool for public health statistics.</li>
+                                <li>Create a machine learning model to classify customer feedback.</li>
+                            </ul>`;
+                } else if (field === 'cybersecurity') {
+                    idea = `<strong>Sample Ideas:</strong>
+                            <ul>
+                                <li>Develop a tool for detecting phishing attacks in real-time.</li>
+                                <li>Create a secure file-sharing platform with end-to-end encryption.</li>
+                                <li>Build a system to monitor network traffic for suspicious activity.</li>
+                                <li>Design an application for secure password management.</li>
+                            </ul>`;
+                }
+            }
+
+            if (field) {
+                ideaDiv.innerHTML = idea;
+                ideaDiv.style.display = 'block';
+            } else {
+                ideaDiv.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

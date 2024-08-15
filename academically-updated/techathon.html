@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techathon Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="details-container">
+        <h1>Techathon</h1>
+        <p><strong>What is a Techathon?</strong><br>A Techathon is a competition where participants focus on technology-related projects, emphasizing innovation, technical skills, and problem-solving.</p>
+        
+        <p><strong>Why Should Students Participate?</strong><br>Participation in a Techathon offers students:</p>
+        <ul>
+            <li>Hands-on experience with emerging technologies.</li>
+            <li>Opportunity to work on real-world challenges.</li>
+            <li>Chance to network with industry leaders and potential employers.</li>
+            <li>Ability to develop and showcase their technical expertise.</li>
+        </ul>
+        
+        <p><strong>How to Register:</strong></p>
+        <ul>
+            <li>Visit the event's official page.</li>
+            <li>Sign up as an individual or as a team.</li>
+            <li>Submit a brief description of your project or prototype.</li>
+            <li>Wait for confirmation and further details.</li>
+        </ul>
+        
+        <label for="techathon-field">Select Field of Interest:</label>
+        <select id="techathon-field" onchange="showIdea('techathon')">
+            <option value="">--Choose an option--</option>
+            <option value="iot">IoT</option>
+            <option value="robotics">Robotics</option>
+            <option value="ai-ml">AI & ML</option>
+        </select>
+        <div id="techathon-idea" class="idea"></div>
+    </div>
+
+    <script>
+        function showIdea(eventType) {
+            const field = document.getElementById(`${eventType}-field`).value;
+            const ideaDiv = document.getElementById(`${eventType}-idea`);
+
+            let idea = '';
+
+            if (eventType === 'techathon') {
+                if (field === 'iot') {
+                    idea = `<strong>Sample Ideas:</strong>
+                            <ul>
+                                <li>Design an IoT-based system to monitor and manage energy consumption in smart homes.</li>
+                                <li>Create a smart irrigation system that optimizes water usage for farmers.</li>
+                                <li>Develop a connected health monitoring system for elderly care.</li>
+                                <li>Build a smart parking solution that guides drivers to available spots in real-time.</li>
+                            </ul>`;
+                } else if (field === 'robotics') {
+                    idea = `<strong>Sample Ideas:</strong>
+                            <ul>
+                                <li>Develop a robotic arm that assists in assembling intricate electronic components.</li>
+                                <li>Create a robot that can navigate and map unknown environments autonomously.</li>
+                                <li>Build a robotic system for automating household chores.</li>
+                                <li>Design a robot that interacts with children for educational purposes.</li>
+                            </ul>`;
+                } else if (field === 'ai-ml') {
+                    idea = `<strong>Sample Ideas:</strong>
+                            <ul>
+                                <li>Create an AI-based chatbot that helps users navigate through mental health resources.</li>
+                                <li>Develop a machine learning model to predict stock market trends.</li>
+                                <li>Build an AI-driven recommendation system for personalized learning.</li>
+                                <li>Design an AI-powered virtual assistant that manages daily tasks.</li>
+                            </ul>`;
+                }
+            }
+
+            if (field) {
+                ideaDiv.innerHTML = idea;
+                ideaDiv.style.display = 'block';
+            } else {
+                ideaDiv.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

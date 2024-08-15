@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Assignment Reminders</title>
+    <link rel="stylesheet" href="dash.css">
+</head>
+<body>
+    <!-- Dashboard -->
+    <div id="dashboard">
+        <h1>Assignment Dashboard</h1>
+        <div class="dashboard-container">
+            <!-- Assignments Section -->
+            <div id="assignments-card" class="card-layout">
+                <h2>Assignments</h2>
+                <div id="assignments-container" class="card-container">
+                    <!-- Cards for assignments will be dynamically added here -->
+                </div>
+            </div>
+            <!-- Tasks Section -->
+            <div id="tasks-card" class="card-layout">
+                <h2>Your Tasks</h2>
+                <form id="task-form" class="task-form-inline">
+                    <input type="text" id="task-input" placeholder="Add a new task" required>
+                    <button type="submit" id="add-task-button">Add Task</button>
+                </form>
+                <ul id="task-list" class="card-container">
+                    <!-- Tasks will be dynamically added here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="notification-container"></div>
+    <script src="scripts.js"></script>
+</body>
+</html>

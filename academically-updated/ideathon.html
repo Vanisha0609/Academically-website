@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ideathon Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="details-container">
+        <h1>Ideathon</h1>
+        <p><strong>What is an Ideathon?</strong><br>An Ideathon is an event where participants brainstorm and pitch innovative ideas to address real-world problems, focusing on creativity and feasibility.</p>
+        
+        <p><strong>Why Should Students Participate?</strong><br>Participating in an Ideathon provides students with:</p>
+        <ul>
+            <li>Opportunity to develop and pitch innovative ideas.</li>
+            <li>Exposure to real-world problems and potential solutions.</li>
+            <li>Chance to collaborate with other creative thinkers.</li>
+            <li>Networking opportunities with industry experts and potential investors.</li>
+        </ul>
+        
+        <p><strong>How to Register:</strong></p>
+        <ul>
+            <li>Go to the event's official website.</li>
+            <li>Register as an individual or with a team.</li>
+            <li>Select a problem statement or theme to work on.</li>
+            <li>Submit your idea or concept for review.</li>
+        </ul>
+        
+        <label for="ideathon-field">Select Field of Interest:</label>
+        <select id="ideathon-field" onchange="showIdea('ideathon')">
+            <option value="">--Choose an option--</option>
+            <option value="sustainability">Sustainability</option>
+            <option value="health-tech">Health Tech</option>
+            <option value="ed-tech">Ed Tech</option>
+        </select>
+        <div id="ideathon-idea" class="idea"></div>
+    </div>
+
+    <script>
+        function showIdea(eventType) {
+            const field = document.getElementById(`${eventType}-field`).value;
+            const ideaDiv = document.getElementById(`${eventType}-idea`);
+
+            let idea = '';
+
+            if (eventType === 'ideathon') {
+                if (field === 'sustainability') {
+                    idea = `<strong>Sample Ideas:</strong>
+                            <ul>
+                                <li>Propose a system for reducing plastic waste by incentivizing recycling in local communities.</li>
+                                <li>Design a solution for sustainable urban farming using vertical gardens.</li>
+                                <li>Create a platform that connects businesses with surplus food to charities in need.</li>
+                                <li>Develop a mobile app that educates users on sustainable living practices.</li>
+                            </ul>`;
+                } else if (field === 'health-tech') {
+                    idea = `<strong>Sample Ideas:</strong>
+                            <ul>
+                                <li>Pitch a mobile app that tracks user hydration levels and suggests water intake based on activity.</li>
+                                <li>Develop a wearable device that monitors and reports vital signs in real-time.</li>
+                                <li>Create an AI-powered system for early diagnosis of chronic diseases.</li>
+                                <li>Design a telemedicine platform that connects patients with doctors in remote areas.</li>
+                            </ul>`;
+                } else if (field === 'ed-tech') {
+                    idea = `<strong>Sample Ideas:</strong>
+                            <ul>
+                                <li>Design a platform that customizes learning plans for students with different learning styles.</li>
+                                <li>Create an app that gamifies education to engage younger students.</li>
+                                <li>Develop a tool that helps teachers track student progress and adapt lesson plans accordingly.</li>
+                                <li>Build a virtual classroom environment that fosters collaborative learning.</li>
+                            </ul>`;
+                }
+            }
+
+            if (field) {
+                ideaDiv.innerHTML = idea;
+                ideaDiv.style.display = 'block';
+            } else {
+                ideaDiv.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
