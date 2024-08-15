@@ -1,6 +1,6 @@
 const assignments = [
     { title: "Math Assignment 1", dueDate: "2024-08-16", priority: "high" },
-    { title: "History Essay", dueDate: "2024-08-22", priority: "medium" },
+    { title: "customer segmentation assignment", dueDate: "2024-08-22", priority: "medium" },
 ];
 
 
